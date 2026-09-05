@@ -1,0 +1,247 @@
+/* CosmicParallaxBg Component Stylesheet */
+
+:root {
+  --animation-iteration: infinite;
+  --cosmic-bg-dark: #070913;
+  --cosmic-glow-cyan: rgba(0, 240, 255, 0.4);
+  --cosmic-glow-green: rgba(16, 209, 108, 0.45);
+  --cosmic-earth-surface: #0a0e1a;
+}
+
+.cosmic-parallax-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+  background: radial-gradient(ellipse at bottom, #111827 0%, #070913 70%, #030408 100%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Stars Layers */
+.cosmic-stars {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  animation: animStar 50s linear var(--animation-iteration, infinite);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cosmic-stars::after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: inherit;
+}
+
+.cosmic-stars-medium {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  animation: animStar 100s linear var(--animation-iteration, infinite);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cosmic-stars-medium::after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: inherit;
+}
+
+.cosmic-stars-large {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  animation: animStar 150s linear var(--animation-iteration, infinite);
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+
+.cosmic-stars-large::after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: inherit;
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+/* Horizon & Glow */
+#horizon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#horizon .glow {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 220px;
+  background: radial-gradient(ellipse at center, rgba(16, 209, 108, 0.35) 0%, rgba(0, 240, 255, 0.2) 45%, transparent 75%);
+  filter: blur(40px);
+  animation: pulseGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% {
+    opacity: 0.7;
+    transform: translateX(-50%) scaleY(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) scaleY(1.1);
+  }
+}
+
+/* Earth Curve */
+#earth {
+  position: absolute;
+  bottom: -450px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180vw;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 0%, #0d1527 0%, #080c18 50%, #04060d 100%);
+  box-shadow: 
+    0 -15px 40px rgba(16, 209, 108, 0.25),
+    0 -2px 10px rgba(0, 240, 255, 0.4),
+    inset 0 20px 50px rgba(255, 255, 255, 0.05);
+  border-top: 1.5px solid rgba(16, 209, 108, 0.5);
+  z-index: 3;
+}
+
+/* Title & Subtitle Styling */
+#title {
+  position: relative;
+  z-index: 10;
+  font-family: 'Hanken Grotesk', -apple-system, sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.8rem, 7vw, 6.5rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  padding: 0 1.5rem;
+  text-shadow: 
+    0 0 40px rgba(16, 209, 108, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.8);
+  animation: fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+#subtitle {
+  position: relative;
+  z-index: 10;
+  font-family: 'Geist Mono', 'Geist', monospace;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2vw, 1.4rem);
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0 1.5rem;
+  max-width: 900px;
+}
+
+#subtitle span {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #10D16C;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Staggered subtitle parts animations */
+#subtitle .subtitle-part-1 { animation-delay: 0.2s; }
+#subtitle .subtitle-part-2 { animation-delay: 0.4s; }
+#subtitle .subtitle-part-3 { animation-delay: 0.6s; }
+#subtitle .subtitle-part-4 { animation-delay: 0.8s; }
+#subtitle .subtitle-part-5 { animation-delay: 1.0s; }
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  #earth {
+    bottom: -480px;
+    width: 240vw;
+  }
+  
+  #horizon .glow {
+    height: 180px;
+  }
+  
+  #subtitle {
+    gap: 0.5rem;
+  }
+  
+  #subtitle span {
+    padding: 0.3rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
