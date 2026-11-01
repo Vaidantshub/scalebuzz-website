@@ -1,5 +1,11 @@
 import React from 'react';
 
+const team = [
+  { name: 'Vaidant', role: 'Founder & CEO', img: '/vaidant/vaidant.jpg' },
+  { name: 'Samar Zayyan', role: 'Co-Founder & CTO', img: '/samar/samar.jpg' },
+  { name: 'Vaibhav Sharma', role: 'CMO', img: '/vaibhav/vaibhav.jpg' },
+];
+
 export const AboutSection: React.FC = () => {
   return (
     <section id="about" className="py-24 border-b border-white/10 bg-transparent">
@@ -40,6 +46,34 @@ export const AboutSection: React.FC = () => {
                 <p className="text-zinc-400 font-sans">Sub-second page speeds, clean semantic code, WCAG accessibility.</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Team */}
+        <div className="mt-20 pt-12 border-t border-white/10">
+          <span className="text-xs font-mono font-bold tracking-widest text-zinc-400 uppercase block mb-8">
+            THE PEOPLE BEHIND SCALEBUZZ
+          </span>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {team.map((m) => (
+              <div
+                key={m.name}
+                className="bg-zinc-950 rounded border border-white/5 overflow-hidden"
+              >
+                <img
+                  src={m.img}
+                  alt={m.name}
+                  loading="lazy"
+                  className="w-full aspect-[4/5] object-cover grayscale hover:grayscale-0 transition duration-500"
+                />
+                <div className="p-4 space-y-1">
+                  <h3 className="text-white font-sans font-bold text-lg">{m.name}</h3>
+                  <p className="text-xs font-mono uppercase tracking-widest text-zinc-500">
+                    {m.role}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
