@@ -480,25 +480,25 @@ export const TECHNOLOGIES: Technology[] = [
 
 export const TEAM: TeamMember[] = [
   {
-    name: 'Marcus Vance',
-    role: 'Founder & Technical Director',
-    bio: 'Over 10 years of experience engineering custom web platforms and technical architecture for startups and high-growth businesses.',
-    specialty: 'Next.js / TypeScript Architecture / Technical Strategy',
-    initials: 'MV'
+    name: 'Vaidant',
+    role: 'Founder & CEO',
+    bio: 'Leads the vision and strategy behind ScaleBuzz, turning ambitious ideas into high-performance digital products that scale.',
+    specialty: 'Product Strategy / Business Development / Leadership',
+    initials: 'VD'
   },
   {
-    name: 'Elena Rostova',
-    role: 'Principal UI/UX Architect',
-    bio: 'Specializes in high-contrast editorial typography, minimal user interfaces, and human-centered design systems.',
-    specialty: 'Design Systems / Design Strategy / UI/UX',
-    initials: 'ER'
+    name: 'Samar Zayyan',
+    role: 'Co-Founder & CTO',
+    bio: 'Architects the technical backbone of every project — from system design to deployment pipelines, ensuring rock-solid performance.',
+    specialty: 'Next.js / TypeScript Architecture / System Design',
+    initials: 'SZ'
   },
   {
-    name: 'Julian Sterling',
-    role: 'Lead Frontend Engineer',
-    bio: 'Obsessed with Web Vitals, micro-interactions, layout precision, and frictionless cross-browser performance.',
-    specialty: 'React / Performance Optimization / Animation',
-    initials: 'JS'
+    name: 'Vaibhav Sharma',
+    role: 'CMO',
+    bio: 'Drives brand identity, growth strategy, and market positioning — making sure every ScaleBuzz project reaches the right audience.',
+    specialty: 'Brand Strategy / Growth Marketing / Analytics',
+    initials: 'VS'
   }
 ];
 
