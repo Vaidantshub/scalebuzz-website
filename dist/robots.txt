@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /dist/
 
-Sitemap: https://scalebuzz.dev/sitemap.xml
+# Sitemap
+Sitemap: https://scalebuzz.in/sitemap.xml

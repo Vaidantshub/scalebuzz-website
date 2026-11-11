@@ -128,7 +128,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigate, onStartProject }) =>
               <ArrowUpRight className="w-4 h-4" />
             </button>
             <p className="text-center text-xs font-mono text-zinc-500">
-              hello@scalebuzz.dev • © 2026 SCALEBUZZ
+              hello@scalebuzz.in • © 2026 SCALEBUZZ
             </p>
           </div>
         </div>

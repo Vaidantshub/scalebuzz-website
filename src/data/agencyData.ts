@@ -141,7 +141,7 @@ export const PROJECTS: Project[] = [
     slug: 'ddbysardanas',
     category: 'Corporate',
     industry: '3D Exhibition & Global Stall Design',
-    tagline: 'Building Stalls Globally — Premium 3D exhibition stall design & fabrication',
+    tagline: 'Building Stalls Globally â€” Premium 3D exhibition stall design & fabrication',
     description: 'A high-impact 3D website built for Different Dimensions (DD by Sardanas), showcasing over 50 years of excellence in exhibition stall designing and global pavilion fabrication.',
     previewType: 'large',
     image: '/projects/ddbysardanas.png',
@@ -166,7 +166,7 @@ export const PROJECTS: Project[] = [
     slug: 'steven-com',
     category: 'Web Apps',
     industry: 'Creator Economy & Technology Platform',
-    tagline: 'The operating system for the creator economy — Connecting creators to tech',
+    tagline: 'The operating system for the creator economy â€” Connecting creators to tech',
     description: 'A revolutionary web application platform built for Steven.com, empowering creators with community resources, digital products, and technology tools.',
     previewType: 'medium',
     image: '/projects/steven.png',
@@ -191,7 +191,7 @@ export const PROJECTS: Project[] = [
     slug: 'apechain',
     category: 'Web Apps',
     industry: 'Web3 & Decentralized Gaming Hub',
-    tagline: 'The Place to Ape — Decentralized, non-custodial gaming & Web3 hub',
+    tagline: 'The Place to Ape â€” Decentralized, non-custodial gaming & Web3 hub',
     description: 'An immersive Web3 gaming hub and blockchain portal engineered for ApeChain, featuring decentralized app bridges, live games, and token ecosystem tools.',
     previewType: 'wide',
     image: '/projects/apechain.png',
@@ -489,14 +489,14 @@ export const TEAM: TeamMember[] = [
   {
     name: 'Samar Zayyan',
     role: 'Co-Founder & CTO',
-    bio: 'Architects the technical backbone of every project � from system design to deployment pipelines, ensuring rock-solid performance.',
+    bio: 'Architects the technical backbone of every project — from system design to deployment pipelines, ensuring rock-solid performance.',
     specialty: 'Next.js / TypeScript Architecture / System Design',
     initials: 'SZ'
   },
   {
     name: 'Vaibhav Sharma',
     role: 'CMO',
-    bio: 'Drives brand identity, growth strategy, and market positioning � making sure every ScaleBuzz project reaches the right audience.',
+    bio: 'Drives brand identity, growth strategy, and market positioning — making sure every ScaleBuzz project reaches the right audience.',
     specialty: 'Brand Strategy / Growth Marketing / Analytics',
     initials: 'VS'
   }
@@ -511,7 +511,7 @@ export const TESTIMONIALS: Testimonial[] = [
     projectType: "Corporate Website Development"
   },
   {
-    quote: "Working with ScaleBuzz felt like collaborating with a dedicated in-house product team. No jargon, no delays—just incredible design sense and pristine code execution.",
+    quote: "Working with ScaleBuzz felt like collaborating with a dedicated in-house product team. No jargon, no delaysâ€”just incredible design sense and pristine code execution.",
     author: "Sarah Lin",
     company: "Kroma Studio",
     role: "Head of Digital Brand",
@@ -543,7 +543,7 @@ export const FAQS: FAQItem[] = [
     id: 'faq-3',
     category: 'Services',
     question: 'Do you provide both design and development?',
-    answer: 'Yes. ScaleBuzz handles the entire lifecycle under one roof—from strategy and UI/UX design wireframes to custom front-end code development, speed optimization, and production deployment.'
+    answer: 'Yes. ScaleBuzz handles the entire lifecycle under one roofâ€”from strategy and UI/UX design wireframes to custom front-end code development, speed optimization, and production deployment.'
   },
   {
     id: 'faq-4',
@@ -573,6 +573,6 @@ export const FAQS: FAQItem[] = [
     id: 'faq-8',
     category: 'Process',
     question: 'How do we start a project with ScaleBuzz?',
-    answer: 'Simply complete our contact form below or email us directly at hello@scalebuzz.dev. We will review your project details and schedule a 30-minute discovery conversation within 24 hours.'
+    answer: 'Simply complete our contact form below or message us directly on WhatsApp at +91 9873764268, or email us at scalebuzzz@gmail.com. We will review your project details and schedule a 30-minute discovery conversation within 24 hours.'
   }
 ];

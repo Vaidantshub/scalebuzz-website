@@ -14,14 +14,14 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section className="py-24 border-b border-white/10 bg-transparent">
+    <section id="faq" aria-labelledby="faq-heading" className="py-24 border-b border-white/10 bg-transparent">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="mb-16 text-center">
           <span className="text-xs font-mono font-bold tracking-widest text-zinc-400 uppercase block mb-3">
             FREQUENTLY ASKED QUESTIONS
           </span>
-          <h2 className="text-4xl sm:text-6xl font-extrabold tracking-tighter text-white uppercase leading-none font-sans">
+          <h2 id="faq-heading" className="text-4xl sm:text-6xl font-extrabold tracking-tighter text-white uppercase leading-none font-sans">
             QUESTIONS?
           </h2>
           <p className="text-sm text-zinc-400 font-sans mt-4 max-w-xl mx-auto">

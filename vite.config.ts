@@ -12,5 +12,19 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true
+  },
+  build: {
+    // Split heavy 3D/animation libs into separate chunks so the main JS is smaller
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom'],
+          'vendor-motion': ['framer-motion'],
+          'vendor-gsap': ['gsap'],
+          'vendor-3d': ['three', 'ogl', 'postprocessing'],
+        }
+      }
+    },
+    chunkSizeWarningLimit: 600,
   }
 });

@@ -110,12 +110,12 @@ export const Hero: React.FC<HeroProps> = ({ onStartProject, onViewWork, onNaviga
         {/* Main Central Headline */}
         <div className="max-w-4xl space-y-6 pt-4">
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.05] font-sans">
-            Build Faster, Smarter, <br />
-            Scalable <span className="font-serif italic text-[#c92a3e] font-normal tracking-normal">Digital Products</span>
+            Websites &amp; Lead Generation Systems <br />
+            That Help <span className="font-serif italic text-[#c92a3e] font-normal tracking-normal">Businesses Grow</span>
           </h1>
 
           <p className="text-base sm:text-xl text-zinc-400 font-sans max-w-2xl mx-auto leading-relaxed">
-            From AI-Powered Apps To Pixel-Perfect UX—We Turn Ideas Into High-Performance Solutions.
+            From High-Converting Landing Pages To Custom Web Apps — ScaleBuzz Builds Digital Experiences That Drive Real Business Results.
           </p>
 
           {/* Dual Pill CTA Buttons */}
