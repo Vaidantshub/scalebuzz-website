@@ -1,0 +1,23 @@
+# ScaleBuzz — LLM & AI Discovery File
+# https://scalebuzz.in/llms.txt
+
+# Overview
+ScaleBuzz is a high-performance web development, 3D WebGL experience, and lead-generation agency based in India, serving startups, founders, and growing businesses across India and the United States.
+
+# Core Services
+- Custom Website Development (React, Next.js, TypeScript, Tailwind CSS)
+- 3D Interactive Web Experiences (Three.js, WebGL, React Three Fiber, GLSL Shaders)
+- E-Commerce Storefronts (Headless Shopify, Custom Cart Optimization)
+- UI/UX Design & Conversion Rate Optimization (Figma, Interactive Prototyping)
+- Sales Funnel & High-Intent Landing Page Development
+
+# Pricing & Guides
+- 3D Website Cost in India: https://scalebuzz.in/blog/3d-website-cost-in-india
+  (Comprehensive 2026 pricing guide covering ₹45,000 to ₹5,50,000+ tiers, Three.js performance tuning, and Draco compression).
+
+# Official Links
+- Website: https://scalebuzz.in
+- Blog: https://scalebuzz.in/blog
+- WhatsApp: +91 9873764268 (https://wa.me/919873764268)
+- Email: scalebuzzz@gmail.com
+- Instagram: https://instagram.com/_scalebuzz_

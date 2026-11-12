@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import KineticGrid from './components/KineticGrid';
 import { PROJECTS, Project } from './data/agencyData';
 import { CustomCursor } from './components/CustomCursor';
@@ -25,12 +25,63 @@ import { Footer } from './components/Footer';
 import { Preloader } from './components/Preloader';
 import { SEO } from './components/SEO';
 import { openWhatsAppInquiry } from './utils/whatsapp';
+import { BlogListingPage } from './components/BlogListingPage';
+import { BlogPostPage } from './components/BlogPostPage';
+import { BLOG_POSTS } from './data/blogData';
 
 export const App: React.FC = () => {
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
   const [selectedFormProjectType, setSelectedFormProjectType] = useState<string>('Website');
+  const [currentView, setCurrentView] = useState<'home' | 'blog' | 'post'>('home');
+  const [currentPostSlug, setCurrentPostSlug] = useState<string>('');
+
+  // Handle URL path on mount & popstate
+  useEffect(() => {
+    const handleLocation = () => {
+      const path = window.location.pathname;
+      if (path === '/blog' || path === '/blog/') {
+        setCurrentView('blog');
+      } else if (path.startsWith('/blog/')) {
+        const slug = path.replace('/blog/', '').replace(/\/$/, '');
+        if (slug) {
+          setCurrentPostSlug(slug);
+          setCurrentView('post');
+        }
+      } else {
+        setCurrentView('home');
+      }
+    };
+
+    handleLocation();
+    window.addEventListener('popstate', handleLocation);
+    return () => window.removeEventListener('popstate', handleLocation);
+  }, []);
+
+  const navigateTo = (view: 'home' | 'blog' | 'post', slug?: string) => {
+    setCurrentView(view);
+    if (view === 'home') {
+      window.history.pushState({}, '', '/');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (view === 'blog') {
+      window.history.pushState({}, '', '/blog');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (view === 'post' && slug) {
+      setCurrentPostSlug(slug);
+      window.history.pushState({}, '', `/blog/${slug}`);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   const scrollToSection = (sectionId: string) => {
+    if (currentView !== 'home') {
+      navigateTo('home');
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      return;
+    }
+
     if (sectionId === 'hero') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
@@ -54,9 +105,11 @@ export const App: React.FC = () => {
     }
   };
 
+  const activePost = BLOG_POSTS.find(p => p.slug === currentPostSlug) || BLOG_POSTS[0];
+
   return (
     <KineticGrid globalColor="default" className="text-[#f4f4f5] font-sans antialiased bg-noise">
-      <SEO />
+      {currentView === 'home' && <SEO />}
       
       {/* Cool Initial Loading Screen */}
       <Preloader />
@@ -87,6 +140,15 @@ export const App: React.FC = () => {
             ],
           },
           {
+            label: 'Insights',
+            bgColor: '#1e1b28',
+            textColor: '#fff',
+            links: [
+              { label: 'Blog & Guides', ariaLabel: 'View Blog', sectionId: 'blog' },
+              { label: '3D Pricing Guide', ariaLabel: '3D Cost Guide', sectionId: '3d-cost' },
+            ],
+          },
+          {
             label: 'About',
             bgColor: '#1e1b28',
             textColor: '#fff',
@@ -97,67 +159,87 @@ export const App: React.FC = () => {
             ],
           },
         ]}
-        onNavigate={scrollToSection}
+        onNavigate={(id) => {
+          if (id === 'blog') {
+            navigateTo('blog');
+          } else if (id === '3d-cost') {
+            navigateTo('post', '3d-website-cost-in-india');
+          } else {
+            scrollToSection(id);
+          }
+        }}
         onStartProject={() => handleStartProject('Website')}
       />
 
-      {/* Main Page Content Flow */}
-      <main>
-        <Hero
-          onStartProject={() => handleStartProject('Website')}
-          onViewWork={() => scrollToSection('work')}
-          onOpenProjectModal={handleOpenProjectById}
-          onNavigate={scrollToSection}
+      {/* View Routing */}
+      {currentView === 'blog' ? (
+        <BlogListingPage
+          onSelectPost={(slug) => navigateTo('post', slug)}
+          onGoHome={() => navigateTo('home')}
         />
-
-        {/* Trust Strip Section */}
-        <TrustStrip />
-
-        <ServicesSection
-          onSelectService={(serviceTitle) => handleStartProject(serviceTitle)}
+      ) : currentView === 'post' ? (
+        <BlogPostPage
+          post={activePost}
+          onGoBack={() => navigateTo('blog')}
+          onSelectPost={(slug) => navigateTo('post', slug)}
         />
+      ) : (
+        /* Main Homepage Flow */
+        <main>
+          <Hero
+            onStartProject={() => handleStartProject('Website')}
+            onViewWork={() => scrollToSection('work')}
+            onOpenProjectModal={handleOpenProjectById}
+            onNavigate={scrollToSection}
+          />
 
-        <WorkSection
-          onOpenModal={(project) => setActiveModalProject(project)}
-        />
+          <TrustStrip />
 
-        <CaseStudiesSection
-          onStartProject={() => handleStartProject('Website')}
-        />
+          <ServicesSection
+            onSelectService={(serviceTitle) => handleStartProject(serviceTitle)}
+          />
 
-        <ProcessSection />
+          <WorkSection
+            onOpenModal={(project) => setActiveModalProject(project)}
+          />
 
-        <WhyUsSection />
+          <CaseStudiesSection
+            onStartProject={() => handleStartProject('Website')}
+          />
 
-        <TechnologySection />
+          <ProcessSection />
 
-        <EcommerceSection
-          onStartEcommerce={() => handleStartProject('E-commerce')}
-        />
+          <WhyUsSection />
 
-        <LandingPageSection
-          onStartLandingPage={() => handleStartProject('Landing Page')}
-        />
+          <TechnologySection />
 
-        <AboutSection />
+          <EcommerceSection
+            onStartEcommerce={() => handleStartProject('E-commerce')}
+          />
 
-        <TeamSection />
+          <LandingPageSection
+            onStartLandingPage={() => handleStartProject('Landing Page')}
+          />
 
-        <TestimonialsSection />
+          <AboutSection />
 
-        <FAQSection />
+          <TeamSection />
 
-        <ContactSection
-          selectedProjectType={selectedFormProjectType}
-        />
+          <TestimonialsSection />
 
-        <FinalCTA
-          onStartProject={() => handleStartProject('Website')}
-        />
+          <FAQSection />
 
-        {/* Design Consultation & Booking Section */}
-        <Bookademo3 />
-      </main>
+          <ContactSection
+            selectedProjectType={selectedFormProjectType}
+          />
+
+          <FinalCTA
+            onStartProject={() => handleStartProject('Website')}
+          />
+
+          <Bookademo3 />
+        </main>
+      )}
 
       {/* Floating WhatsApp Action Button */}
       <button
@@ -175,7 +257,13 @@ export const App: React.FC = () => {
       </button>
 
       {/* Footer */}
-      <Footer onNavigate={scrollToSection} />
+      <Footer onNavigate={(id) => {
+        if (id === 'blog') {
+          navigateTo('blog');
+        } else {
+          scrollToSection(id);
+        }
+      }} />
 
       {/* Interactive Case Study Detail Modal */}
       <CaseStudyModal
