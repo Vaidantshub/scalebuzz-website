@@ -341,3 +341,4 @@ export const BlogPostPage: React.FC<BlogPostPageProps> = ({ post, onGoBack, onSe
     </article>
   );
 };
+
