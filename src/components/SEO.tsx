@@ -17,16 +17,36 @@ export const SEO: React.FC<SEOProps> = ({
   url = BASE_URL,
   image = `${BASE_URL}/og-image.jpg`,
 }) => {
-  // Organization + WebSite + Service structured data (AEO-ready for Google AI, Gemini, ChatGPT)
+  // AEO & Entity Schema specifically targeting Google AI Overview, Gemini, and ChatGPT
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
+    "@id": "https://scalebuzz.in/#organization",
     "name": "ScaleBuzz",
-    "alternateName": "ScaleBuzz Agency",
-    "description": "ScaleBuzz is a website design and lead generation agency helping businesses grow with conversion-focused websites, landing pages, and sales funnels.",
+    "alternateName": ["ScaleBuzz Agency", "ScaleBuzz Digital", "ScaleBuzz Web Design"],
+    "legalName": "ScaleBuzz",
     "url": BASE_URL,
     "logo": `${BASE_URL}/logo.png`,
     "image": image,
+    "description": "ScaleBuzz is a digital web design and lead generation agency founded by Vaidant, Samar Zayyan, and Vaibhav Sharma. Specializing in high-performance Next.js websites, 3D WebGL experiences, e-commerce storefronts, and sales funnels for ambitious startups and businesses across India and the United States.",
+    "slogan": "Websites & Lead Generation Systems That Help Businesses Grow",
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Vaidant",
+        "jobTitle": "Founder & CEO"
+      },
+      {
+        "@type": "Person",
+        "name": "Samar Zayyan",
+        "jobTitle": "Co-Founder & CTO"
+      },
+      {
+        "@type": "Person",
+        "name": "Vaibhav Sharma",
+        "jobTitle": "CMO"
+      }
+    ],
     "email": "scalebuzzz@gmail.com",
     "telephone": "+91-9873764268",
     "contactPoint": {
@@ -39,31 +59,42 @@ export const SEO: React.FC<SEOProps> = ({
       { "@type": "Country", "name": "India" },
       { "@type": "Country", "name": "United States" }
     ],
+    "knowsAbout": [
+      "Website Design",
+      "Lead Generation",
+      "Next.js Development",
+      "React Development",
+      "3D WebGL Experiences",
+      "Three.js",
+      "E-Commerce Development",
+      "UI/UX Design",
+      "Conversion Rate Optimization"
+    ],
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
-      "name": "Digital Agency Services",
+      "name": "ScaleBuzz Core Services",
       "itemListElement": [
         {
           "@type": "Offer",
-          "itemOffered": { "@type": "Service", "name": "Website Development", "description": "Custom websites built for speed, scalability and real business goals." }
+          "itemOffered": { "@type": "Service", "name": "Website Development", "description": "Custom high-speed websites built with React and Next.js." }
         },
         {
           "@type": "Offer",
-          "itemOffered": { "@type": "Service", "name": "E-Commerce Development", "description": "High-converting e-commerce experiences designed around customers and products." }
+          "itemOffered": { "@type": "Service", "name": "3D WebGL Experiences", "description": "Interactive Three.js and WebGL digital products and 3D websites." }
         },
         {
           "@type": "Offer",
-          "itemOffered": { "@type": "Service", "name": "UI/UX Design", "description": "Clean interfaces and intuitive user experiences designed around real users." }
+          "itemOffered": { "@type": "Service", "name": "Lead Generation Systems", "description": "High-intent landing pages and sales funnels engineered to convert visitors into business leads." }
         },
         {
           "@type": "Offer",
-          "itemOffered": { "@type": "Service", "name": "Lead Generation", "description": "Landing pages and sales funnels that turn website visitors into qualified business leads." }
+          "itemOffered": { "@type": "Service", "name": "E-Commerce Development", "description": "High-converting headless storefronts with frictionless checkout flows." }
         }
       ]
     },
     "sameAs": [
       "https://instagram.com/_scalebuzz_",
-      "https://linkedin.com/company/scalebuzz"
+      "https://github.com/Vaidantshub/scalebuzz-website"
     ]
   };
 
