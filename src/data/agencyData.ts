@@ -480,11 +480,11 @@ export const TECHNOLOGIES: Technology[] = [
 
 export const TEAM: TeamMember[] = [
   {
-    name: 'Vaidant',
+    name: 'Vaidant Pipal',
     role: 'Founder & CEO',
     bio: 'Leads the vision and strategy behind ScaleBuzz, turning ambitious ideas into high-performance digital products that scale.',
     specialty: 'Product Strategy / Business Development / Leadership',
-    initials: 'VD'
+    initials: 'VP'
   },
   {
     name: 'Samar Zayyan',

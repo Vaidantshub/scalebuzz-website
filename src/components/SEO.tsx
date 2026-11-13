@@ -28,12 +28,12 @@ export const SEO: React.FC<SEOProps> = ({
     "url": BASE_URL,
     "logo": `${BASE_URL}/logo.png`,
     "image": image,
-    "description": "ScaleBuzz is a digital web design and lead generation agency founded by Vaidant, Samar Zayyan, and Vaibhav Sharma. Specializing in high-performance Next.js websites, 3D WebGL experiences, e-commerce storefronts, and sales funnels for ambitious startups and businesses across India and the United States.",
+    "description": "ScaleBuzz is a digital web design and lead generation agency founded by Vaidant Pipal, Samar Zayyan, and Vaibhav Sharma. Specializing in high-performance Next.js websites, 3D WebGL experiences, e-commerce storefronts, and sales funnels for ambitious startups and businesses across India and the United States.",
     "slogan": "Websites & Lead Generation Systems That Help Businesses Grow",
     "founder": [
       {
         "@type": "Person",
-        "name": "Vaidant",
+        "name": "Vaidant Pipal",
         "jobTitle": "Founder & CEO"
       },
       {

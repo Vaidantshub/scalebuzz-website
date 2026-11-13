@@ -23,7 +23,7 @@ export const BLOG_POSTS: BlogPost[] = [
     updated: "2026-11-12",
     category: "Web Development",
     focusKeyword: "3D website cost in India",
-    author: "Vaidant",
+    author: "Vaidant Pipal",
     image: "/projects/noomoagency.png",
     imageAlt: "ScaleBuzz 3D interactive WebGL project showcasing realistic 3D website cost in India",
     readingTime: "6 min read",

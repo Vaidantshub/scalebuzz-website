@@ -5,7 +5,7 @@ import vaibhavImg from '../assets/team/vaibhav.jpg';
 
 const team = [
   {
-    name: 'Vaidant',
+    name: 'Vaidant Pipal',
     role: 'Founder & CEO',
     img: vaidantImg,
     tagline: 'Vision. Strategy. Execution.',
