@@ -49,6 +49,12 @@ export const SEO: React.FC<SEOProps> = ({
     ],
     "email": "scalebuzzz@gmail.com",
     "telephone": "+91-9873764268",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rohini",
+      "addressRegion": "Delhi",
+      "addressCountry": "IN"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-9873764268",
@@ -56,6 +62,9 @@ export const SEO: React.FC<SEOProps> = ({
       "availableLanguage": ["English", "Hindi"]
     },
     "areaServed": [
+      { "@type": "AdministrativeArea", "name": "Rohini, Delhi" },
+      { "@type": "City", "name": "Delhi" },
+      { "@type": "State", "name": "Delhi NCR" },
       { "@type": "Country", "name": "India" },
       { "@type": "Country", "name": "United States" }
     ],
