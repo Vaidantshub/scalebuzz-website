@@ -2,5 +2,18 @@ User-agent: *
 Allow: /
 Disallow: /dist/
 
+# AI Search Crawlers (ChatGPT, SearchGPT, Perplexity, Claude)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
 # Sitemap
 Sitemap: https://scalebuzz.in/sitemap.xml
