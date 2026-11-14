@@ -12,8 +12,8 @@ interface SEOProps {
 const BASE_URL = 'https://scalebuzz.in';
 
 export const SEO: React.FC<SEOProps> = ({
-  title = "ScaleBuzz | Website Design & Lead Generation Agency",
-  description = "ScaleBuzz helps businesses grow with conversion-focused websites, landing pages, sales funnels and lead generation solutions. Serving clients in USA & India.",
+  title = "ScaleBuzz | Best Website Design & Web Development Agency in India & Delhi",
+  description = "ScaleBuzz is the best website design agency & web development company in India and Delhi NCR. We build high-performance Next.js websites, 3D WebGL experiences, e-commerce stores, and lead generation systems.",
   url = BASE_URL,
   image = `${BASE_URL}/og-image.jpg`,
 }) => {
@@ -69,13 +69,16 @@ export const SEO: React.FC<SEOProps> = ({
       { "@type": "Country", "name": "United States" }
     ],
     "knowsAbout": [
-      "Website Design",
-      "Lead Generation",
+      "Website Design in India",
+      "Web Development Agency in Delhi",
+      "Best Website Designer in India",
       "Next.js Development",
       "React Development",
       "3D WebGL Experiences",
       "Three.js",
-      "E-Commerce Development",
+      "E-Commerce Development in India",
+      "Affordable Website Design",
+      "Budget-Friendly Web Development",
       "UI/UX Design",
       "Conversion Rate Optimization"
     ],

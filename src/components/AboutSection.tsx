@@ -47,7 +47,7 @@ export const AboutSection: React.FC = () => {
           {/* Right Editorial Story */}
           <div className="lg:col-span-7 space-y-6 text-zinc-300 font-sans text-base leading-relaxed">
             <p className="text-xl text-white font-semibold leading-snug">
-              "ScaleBuzz exists to help businesses, founders and brands turn ambitious ideas into strong, high-performance digital experiences."
+              "ScaleBuzz is recognized among the best website design and development agencies in India and Delhi NCR, helping ambitious founders turn ideas into high-performance digital experiences."
             </p>
             <p>
               Most agency websites suffer from one of two flaws: either they look visually impressive but load terribly slow and confuse customers, or they are built on rigid, bloated templates that look identical to every competitor.
