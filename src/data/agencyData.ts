@@ -543,7 +543,7 @@ export const FAQS: FAQItem[] = [
     id: 'faq-3',
     category: 'Services',
     question: 'Do you provide both design and development?',
-    answer: 'Yes. ScaleBuzz handles the entire lifecycle under one roofâ€”from strategy and UI/UX design wireframes to custom front-end code development, speed optimization, and production deployment.'
+    answer: 'Yes. ScaleBuzz handles the entire lifecycle under one roof — from strategy and UI/UX design wireframes to custom front-end code development, speed optimization, and production deployment.'
   },
   {
     id: 'faq-4',

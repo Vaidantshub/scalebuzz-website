@@ -14,7 +14,7 @@ export const FAQSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="py-24 border-b border-white/10 bg-transparent">
+    <section id="faq" aria-labelledby="faq-heading" itemScope itemType="https://schema.org/FAQPage" className="py-24 border-b border-white/10 bg-transparent">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="mb-16 text-center">
@@ -29,19 +29,28 @@ export const FAQSection: React.FC = () => {
           </p>
         </div>
 
-        {/* Accordion List */}
+        {/* Accordion List with full DOM presence for AEO & GEO parsers */}
         <div className="divide-y divide-white/10 border-t border-b border-white/10">
           {FAQS.map((faq) => {
             const isOpen = openIds.includes(faq.id);
 
             return (
-              <div key={faq.id} className="py-6 transition-colors">
+              <div
+                key={faq.id}
+                itemScope
+                itemProp="mainEntity"
+                itemType="https://schema.org/Question"
+                className="py-6 transition-colors"
+              >
                 <button
                   onClick={() => toggleFaq(faq.id)}
                   className="w-full text-left flex items-center justify-between gap-4 group focus:outline-none"
                   aria-expanded={isOpen}
                 >
-                  <span className="text-lg sm:text-xl font-extrabold text-white tracking-tight group-hover:text-zinc-300 transition-colors font-sans">
+                  <span
+                    itemProp="name"
+                    className="text-lg sm:text-xl font-extrabold text-white tracking-tight group-hover:text-zinc-300 transition-colors font-sans"
+                  >
                     {faq.question}
                   </span>
                   <span className={`p-2 rounded-full border transition-all shrink-0 ${isOpen ? 'bg-white border-transparent text-zinc-950' : 'border-white/20 text-zinc-400 group-hover:border-white group-hover:text-white'}`}>
@@ -49,11 +58,18 @@ export const FAQSection: React.FC = () => {
                   </span>
                 </button>
 
-                {isOpen && (
-                  <div className="pt-4 text-sm text-zinc-300 font-sans leading-relaxed pr-8 animate-fadeIn">
+                <div
+                  itemScope
+                  itemProp="acceptedAnswer"
+                  itemType="https://schema.org/Answer"
+                  className={`overflow-hidden transition-all duration-300 pr-8 ${
+                    isOpen ? 'max-h-96 opacity-100 pt-4' : 'max-h-0 opacity-0 pointer-events-none'
+                  }`}
+                >
+                  <p itemProp="text" className="text-sm text-zinc-300 font-sans leading-relaxed">
                     {faq.answer}
-                  </div>
-                )}
+                  </p>
+                </div>
               </div>
             );
           })}
